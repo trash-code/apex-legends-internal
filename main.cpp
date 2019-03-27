@@ -194,7 +194,7 @@ void __stdcall _thr() {
 
 bool __stdcall DllMain(void* module, unsigned long reason, void* buffer) {//inject with hack thread option
 	if (reason == 1) {
-		CreateThread(0, 0, (LPTHREAD_START_ROUTINE)_thr, 0, 0, 0);
+		_thr();
 	}
 	return true;
 }
